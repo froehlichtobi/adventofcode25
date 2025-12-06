@@ -11,7 +11,6 @@ public class day6 {
         for (String line : lines) {
             maxLen = Math.max(maxLen, line.length());
         }
-        List<String> columns = new ArrayList<>();
         String line = "";
         for (int j = maxLen - 1; j >= 0; j--) {
             for (int i = 0; i < lines.size(); i++) {
@@ -37,7 +36,7 @@ public class day6 {
                 if (!addition)
                     localSum++;
                 for (int j = 0; j < numbers.length; j++) {
-                    if (numsSeparated[j] != "") {
+                    if (!numsSeparated[j].isEmpty()) {
                         numbers[j] = Integer.parseInt(numsSeparated[j]);
                         if (addition)
                             localSum += numbers[j];
